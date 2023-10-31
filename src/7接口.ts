@@ -78,3 +78,41 @@
 //   size: 12,
 //   taste: '甜的'
 //  }
+
+// 8.接口可以进行扩展 或者说继承
+// interface IVeg {
+//   name: string
+//   size: number
+// }
+
+// interface ITomato extends IVeg {
+//   color: string
+//   taste: string
+// }
+
+// let tomato: ITomato = {
+//   name: "tomato",
+//   color: "yellow",
+//   size: 12,
+//   taste: '甜的'
+// }
+
+// 9.[props:string]: any 可以设置任意索引签名，且索引签名必须为string 或者number
+
+interface IVegAll {
+  size: number
+  [prop:string]: any
+}
+
+let tomato: IVegAll = {
+  name: "tomato",
+  age: 1,
+  taste: "甜的",
+  size: 12
+}
+
+interface IArray {
+  [prop:number] : any
+}
+let arr: IArray = [1, 2, 3]
+let arrObj:IArray = { 1: 'suu', "0" : "ooo"}  // key值能转换成number类型即可
